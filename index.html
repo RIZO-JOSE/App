@@ -126,6 +126,30 @@ footer{text-align:center;padding:40px;opacity:.8;font-size:14px}
 .pres span.pn{padding:9px 18px;border-radius:99px;font-weight:600;font-size:15px;background:var(--glass);border:1px solid var(--glass-b);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.25s}
 .pres span.pn:hover{transform:translateY(-3px);background:rgba(255,255,255,.26)}
 .bimg{display:block;width:100%;max-width:170px;border-radius:10px;margin:0 0 4px;object-fit:cover}
+
+.hero{position:relative;padding:56px 20px 44px;isolation:isolate}
+.orb{position:relative;width:150px;height:150px;margin:0 auto 14px;display:grid;place-items:center}
+.orb i{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(94,234,212,.55);animation:ring 3.6s ease-out infinite}
+.orb i:nth-child(2){animation-delay:1.2s}.orb i:nth-child(3){animation-delay:2.4s}
+@keyframes ring{0%{transform:scale(.45);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.orb .core{position:relative;width:104px;height:104px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.3),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 40px rgba(0,30,35,.45),0 0 44px rgba(94,234,212,.4);animation:bob 4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.orb svg{width:62px;height:62px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35))}
+.fl{position:relative;flex:none;font-size:30px;width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:var(--glass);border:1px solid var(--glass-b);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 28px rgba(0,30,35,.35);animation:drift 5.5s ease-in-out infinite}
+.stage{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
+.stage .orb{margin:0 6px}
+.stage .fl:nth-child(2){animation-delay:.6s}.stage .fl:nth-child(4){animation-delay:1.2s}.stage .fl:nth-child(5){animation-delay:1.8s}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero h1{background:linear-gradient(180deg,#fff 30%,#bff7ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 8px 30px rgba(34,203,211,.45))}
+.hero h1 b{background:linear-gradient(90deg,#5EEAD4,#22CBD3,#5EEAD4);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero small{display:inline-block;padding:6px 16px;border-radius:99px;background:var(--glass);border:1px solid var(--glass-b);font-weight:600;letter-spacing:.22em;font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0 6px}
+.chips span{padding:9px 18px;border-radius:99px;font-weight:700;font-size:15px;background:linear-gradient(135deg,rgba(94,234,212,.32),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.4);box-shadow:0 6px 20px rgba(0,30,35,.25);transition:.25s}
+.chips span:hover{transform:translateY(-3px) scale(1.04)}
+.hero .ln{width:90px;height:4px;border-radius:4px;margin:16px auto 0;background:linear-gradient(90deg,transparent,var(--mint),transparent)}
+@media(max-width:700px){.fl{display:none}.orb{width:120px;height:120px}.orb .core{width:86px;height:86px}.orb svg{width:50px;height:50px}}
+@media(prefers-reduced-motion:reduce){.orb i,.orb .core,.fl,.hero h1 b{animation:none!important}}
 </style>
 </head>
 <body>
@@ -137,10 +161,12 @@ footer{text-align:center;padding:40px;opacity:.8;font-size:14px}
 </nav>
 
 <div class="hero" id="home">
+  <div class="stage"><span class="fl">🔑</span><span class="fl">📱</span><div class="orb"><i></i><i></i><i></i><div class="core"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="27" cy="27" r="17" stroke="#fff" stroke-width="5"/><path d="M27 17a8 8 0 0 0-8 8c0 6 8 13 8 13s8-7 8-13a8 8 0 0 0-8-8z" fill="#5EEAD4"/><circle cx="27" cy="25" r="3" fill="#06424D"/><path d="M40 40l16 16" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></div></div><span class="fl">🎒</span><span class="fl">👛</span></div>
   <small>CITY COLLEGE OF ANGELES</small>
   <h1>SeekN<b>Find</b></h1>
-  <p class="tag">Find it. Report it. Return it.</p>
-  <p>A campus lost &amp; found app for students and administrators, built with Android (Java) and Firebase.</p>
+  <div class="chips"><span>🔎 Find it</span><span>📝 Report it</span><span>🤝 Return it</span></div>
+  <div class="ln"></div>
+  <p>A campus lost &amp; found app for students and administrators.</p>
   <div class="pres"><span class="k">Presenters</span><div class="row"><span class="pn">Christian Rizo Jose</span><span class="pn">Prince Christian Divina</span><span class="pn">Iverson Quiamboa</span></div></div>
 </div>
 
